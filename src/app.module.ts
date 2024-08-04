@@ -5,7 +5,6 @@ import { ServeStaticModule } from '@nestjs/serve-static'
 import { join } from 'path'
 import { ScheduleModule } from '@nestjs/schedule'
 
-import { appConfig } from './common/configs'
 import { IsUniqueConstraint } from './common/decorators'
 import { UserModule } from './modules/user/user.module'
 
@@ -14,7 +13,6 @@ import { UserModule } from './modules/user/user.module'
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
-      load: [appConfig],
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

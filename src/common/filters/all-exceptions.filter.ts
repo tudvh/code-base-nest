@@ -3,6 +3,6 @@ import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
   catch(exception: unknown, host: ArgumentsHost) {
-    console.error(`\n${exception}`)
+    console.error(exception)
   }
 }
